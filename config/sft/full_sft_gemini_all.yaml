@@ -1,0 +1,40 @@
+### model
+model_name_or_path: mistralai/Mistral-7B-v0.1
+trust_remote_code: true
+
+### method
+stage: sft
+do_train: true
+finetuning_type: full
+deepspeed: config/ds_z3_config.json  # choices: [ds_z0_config.json, ds_z2_config.json, ds_z3_config.json]
+
+### dataset
+dataset: UltraFeedback_gemini_all
+template: mistral
+cutoff_len: 1024
+max_samples: 30000
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+### output
+output_dir: saves/Mistral-7B-v0.1/gemini_sft_30000
+logging_steps: 10
+save_steps: 5000
+plot_loss: true
+overwrite_output_dir: true
+
+### train
+per_device_train_batch_size: 2
+gradient_accumulation_steps: 2
+learning_rate: 1.0e-5
+num_train_epochs: 3.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+bf16: true
+ddp_timeout: 180000000
+
+# ### eval
+# val_size: 0.1
+# per_device_eval_batch_size: 1
+# eval_strategy: steps
+# eval_steps: 500
