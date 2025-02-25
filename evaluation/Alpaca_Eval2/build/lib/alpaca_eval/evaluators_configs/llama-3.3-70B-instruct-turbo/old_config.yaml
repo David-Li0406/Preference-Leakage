@@ -1,0 +1,20 @@
+llama-3.3-70B-instruct-turbo:
+  prompt_template: "llama-3.3-70B-instruct-turbo/alpaca_eval_clf.txt"
+  fn_completions: "openai_completions"
+  completions_kwargs:
+    requires_chatml: True
+    model_name: "meta-llama/Llama-3.3-70B-Instruct-Turbo"
+    max_tokens: 1
+    temperature: 1
+    logprobs: true
+    top_logprobs: 5
+    client_kwargs:
+      base_url: 'https://api.together.xyz/v1'
+        # api_key: '28d76a81843ff91a3cb38388b57beee07bf1876001c4ba992a645fc3ed433fb0'
+  fn_completion_parser: "logprob_parser"
+  completion_parser_kwargs:
+    numerator_token: "m"
+    denominator_tokens: ["m", "M"]
+    is_binarize: false
+  completion_key: "completions_all"
+  batch_size: 1

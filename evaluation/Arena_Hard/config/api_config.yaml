@@ -1,0 +1,341 @@
+# name: str
+#     model_name: str
+#     endpoints: default to null
+#         - api_base: str
+#           api_key: str
+#           api_version: str optional (only for azure)
+#     api_type: str
+#     tokenizer: str optional (to optimize token limits)
+#     parallel: int
+#     system_prompt: str optional (add system instruction when generating model answer)
+
+gpt-3.5-turbo-0125:
+    model_name: gpt-3.5-turbo-0125
+    endpoints:
+      - api_base: "https://api.openai.com/v1"
+        api_key: ""
+    api_type: openai
+    parallel: 8
+
+gpt-4-turbo-2024-04-09:
+    model_name: gpt-4-turbo-2024-04-09
+    endpoints:
+      - api_base: "https://api.openai.com/v1"
+        api_key: ""
+    api_type: openai
+    parallel: 8
+
+llama-1b:
+    model_name: llama-1b
+    endpoints: 
+      - api_base: "http://localhost:8000/v1"
+        api_key: "token-abc123"
+    api_type: openai
+    parallel: 8
+
+# inherit - 30000 old - mistral
+Mistral-7B-v0.1_gemini_sft_30000_inherit:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/gemini_sft_30000_inherit
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+Mistral-7B-v0.1_gpt4_sft_30000_inherit:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/gpt4_sft_30000_inherit
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+# inherit - 30000 new - mistral
+Mistral-7B-v0.1_gemini_sft_30000_inherit_new:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/gemini_sft_30000_inherit_new
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+Mistral-7B-v0.1_gpt4_sft_30000_inherit_new:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/gpt4_sft_30000_inherit_new
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+# mix
+Mistral-7B-v0.1_gemini_sft_30000_mix_0.1:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/mix/gemini_sft_0.1
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+Mistral-7B-v0.1_gemini_sft_30000_mix_0.3:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/mix/gemini_sft_0.3
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+Mistral-7B-v0.1_gemini_sft_30000_mix_0.5:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/mix/gemini_sft_0.5
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+Mistral-7B-v0.1_gemini_sft_30000_mix_0.7:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/mix/gemini_sft_0.7
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+Mistral-7B-v0.1_gpt4_sft_30000_mix_0.1:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/mix/gpt4_sft_0.1
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+Mistral-7B-v0.1_gpt4_sft_30000_mix_0.3:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/mix/gpt4_sft_0.3
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+Mistral-7B-v0.1_gpt4_sft_30000_mix_0.5:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/mix/gpt4_sft_0.5
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+Mistral-7B-v0.1_gpt4_sft_30000_mix_0.7:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/mix/gpt4_sft_0.7
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+# mix_synthetic
+Mistral-7B-v0.1_gemini_sft_30000_mix_synthetic_0.1:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/mix_synthetic/gemini_sft_0.1
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+Mistral-7B-v0.1_gemini_sft_30000_mix_synthetic_0.3:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/mix_synthetic/gemini_sft_0.3
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+Mistral-7B-v0.1_gemini_sft_30000_mix_synthetic_0.5:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/mix_synthetic/gemini_sft_0.5
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+Mistral-7B-v0.1_gemini_sft_30000_mix_synthetic_0.7:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/mix_synthetic/gemini_sft_0.7
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+Mistral-7B-v0.1_gpt4_sft_30000_mix_synthetic_0.1:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/mix_synthetic/gpt4_sft_0.1
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+Mistral-7B-v0.1_gpt4_sft_30000_mix_synthetic_0.3:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/mix_synthetic/gpt4_sft_0.3
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+Mistral-7B-v0.1_gpt4_sft_30000_mix_synthetic_0.5:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/mix_synthetic/gpt4_sft_0.5
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+Mistral-7B-v0.1_gpt4_sft_30000_mix_synthetic_0.7:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/mix_synthetic/gpt4_sft_0.7
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+# icl
+Mistral-7B-v0.1_moss_oasst_lima_gpt4:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/moss_oasst_lima_sft_30000
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+Mistral-7B-v0.1_moss_oasst_lima_gemini:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/moss_oasst_lima_sft_30000
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+Mistral-7B-v0.1_moss_oasst_lima_gpt4:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/moss_oasst_lima_sft_30000
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+Mistral-7B-v0.1_moss_oasst_lima_gemini:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/moss_oasst_lima_sft_30000
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+# dpo
+Mistral-7B-v0.1_dpo_moss_oasst_lima_gpt4:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/gpt4_dpo_30000_moss_oasst_lima
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+Mistral-7B-v0.1_dpo_moss_oasst_lima_gemini:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/gemini_dpo_30000_moss_oasst_lima
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+Mistral-7B-v0.1_dpo_mistral_gpt4:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/gpt4_dpo_30000_mistral_gpt4
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+Mistral-7B-v0.1_dpo_mistral_gemini:
+    model_name: /scratch/daweili5/preference_leakage/saves/Mistral-7B-v0.1/gemini_dpo_30000_mistral_gemini
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+
+Mistral-7B-v0.1_llama_sft_30000:
+    model_name: Mistral-7B-v0.1_llama_sft_30000
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+Mistral-7B-v0.1_gpt4_sft_30000:
+    model_name: Mistral-7B-v0.1_gpt4_sft_30000
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+Mistral-7B-v0.1_gemini_sft_30000:
+    model_name: Mistral-7B-v0.1_gemini_sft_30000
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+gpt-4-0314:
+    model_name: gpt-4-0314
+    endpoints: null
+    api_type: openai
+    parallel: 8
+
+gpt-4-1106-preview:
+    model_name: gpt-4-1106-preview
+    endpoints: null
+    api_type: openai
+    parallel: 8
+
+gpt-4o-2024-11-20:
+    model_name: gpt-4o-2024-11-20
+    endpoints:
+      - api_base: "https://api.openai.com/v1"
+        api_key: ""
+    api_type: openai
+    parallel: 8
+
+gemini-1.5-flash:
+    model_name: gemini-1.5-flash
+    endpoints: 
+      - api_base: "https://generativelanguage.googleapis.com/v1beta/openai/"
+        api_key: ""
+    api_type: openai
+    parallel: 8
+
+gemini-1.0-pro:
+    model_name: gemini-1.0-pro
+    endpoints: 
+      - api_base: "https://generativelanguage.googleapis.com/v1beta/openai/"
+        api_key: ""
+    api_type: openai
+    parallel: 8
+
+gemini-1.5-pro:
+    model_name: gemini-1.5-pro
+    endpoints: 
+      - api_base: "https://generativelanguage.googleapis.com/v1beta/openai/"
+        api_key: ""
+    api_type: openai
+    parallel: 8
+
+Llama3-70B:
+    model_name: meta-llama/Llama-3.3-70B-Instruct-Turbo
+    endpoints:
+      - api_base: "https://api.together.xyz/v1"
+        api_key: ""
+    api_type: openai
+    parallel: 8

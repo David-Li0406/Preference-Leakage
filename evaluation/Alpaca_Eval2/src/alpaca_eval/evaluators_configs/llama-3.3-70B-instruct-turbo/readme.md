@@ -1,0 +1,1 @@
+使用old_config时因为together api无法返回log_prob导致parser计算错误
