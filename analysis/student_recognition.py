@@ -126,7 +126,7 @@ def main():
                 label.append(1)
             else:
                 label.append(0)
-            p, response = model2function[judge_model](item["instruction"], output)
+            p, response = model2function[args.judge_model](item["instruction"], output)
             pred.append(p)
             item["{} judgment".format(judge_model)] = {
                 "pred": p,
