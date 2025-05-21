@@ -287,6 +287,103 @@ Mistral-7B-v0.1_gemini_sft_30000:
         api_key: None
     api_type: openai
     parallel: 8
+    
+# additional
+qwen-2.5-3b-gemini:
+    model_name: /scratch/daweili5/preference_leakage/saves/Qwen2.5-3B/gemini_sft_30000
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+qwen-2.5-3b-gpt4:
+    model_name: /scratch/daweili5/preference_leakage/saves/Qwen2.5-3B/gpt4_sft_30000
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+qwen-2.5-7b-gemini:
+    model_name: /scratch/daweili5/preference_leakage/saves/Qwen2.5-7B/gemini_sft_30000
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+qwen-2.5-7b-gpt4:
+    model_name: /scratch/daweili5/preference_leakage/saves/Qwen2.5-7B/gpt4_sft_30000
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+qwen-3-1.7b-gemini:
+    model_name: /scratch/daweili5/preference_leakage/saves/Qwen3-1.7B/gemini_sft_30000
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+qwen-3-1.7b-gpt4:
+    model_name: /scratch/daweili5/preference_leakage/saves/Qwen3-1.7B/gpt4_sft_30000
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+qwen-3-4b-gemini:
+    model_name: /scratch/daweili5/preference_leakage/saves/Qwen3-4B/gemini_sft_30000
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+qwen-3-4b-gpt4:
+    model_name: /scratch/daweili5/preference_leakage/saves/Qwen3-4B/gpt4_sft_30000
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+qwen-3-8b-gemini:
+    model_name: /scratch/daweili5/preference_leakage/saves/Qwen3-8B/gemini_sft_30000
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+qwen-3-8b-gpt4:
+    model_name: /scratch/daweili5/preference_leakage/saves/Qwen3-8B/gpt4_sft_30000
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+qwen-3-14b-gemini:
+    model_name: /scratch/daweili5/preference_leakage/saves/Qwen3-14B/gemini_sft_30000
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
+
+qwen-3-14b-gpt4:
+    model_name: /scratch/daweili5/preference_leakage/saves/Qwen3-14B/gpt4_sft_30000
+    endpoints:
+      - api_base: "http://localhost:8000/v1"
+        api_key: None
+    api_type: openai
+    parallel: 8
 
 gpt-4-0314:
     model_name: gpt-4-0314

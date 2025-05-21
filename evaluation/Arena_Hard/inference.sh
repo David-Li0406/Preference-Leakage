@@ -51,6 +51,22 @@ MODEL_ZOO["mistral-7b-v0.1_gemini_mix_synthetic_0.3"]="../../saves/Mistral-7B-v0
 MODEL_ZOO["mistral-7b-v0.1_gemini_mix_synthetic_0.5"]="../../saves/Mistral-7B-v0.1/mix_synthetic/gemini_sft_0.5"
 MODEL_ZOO["mistral-7b-v0.1_gemini_mix_synthetic_0.7"]="../../saves/Mistral-7B-v0.1/mix_synthetic/gemini_sft_0.7"
 
+
+# for additional exp
+MODEL_ZOO["qwen-2.5-3b-gemini"]="../../saves/Qwen2.5-3B/gemini_sft_30000"
+MODEL_ZOO["qwen-2.5-3b-gpt4"]="../../preference_leakage/saves/Qwen2.5-3B/gpt4_sft_30000"
+MODEL_ZOO["qwen-2.5-7b-gemini"]="../../preference_leakage/saves/Qwen2.5-7B/gemini_sft_30000"
+MODEL_ZOO["qwen-2.5-7b-gpt4"]="../../preference_leakage/saves/Qwen2.5-7B/gpt4_sft_30000"
+MODEL_ZOO["qwen-3-1.7b-gemini"]="../../preference_leakage/saves/Qwen3-1.7B/gemini_sft_30000"
+MODEL_ZOO["qwen-3-1.7b-gpt4"]="../../preference_leakage/saves/Qwen3-1.7B/gpt4_sft_30000"
+MODEL_ZOO["qwen-3-4b-gemini"]="../../preference_leakage/saves/Qwen3-4B/gemini_sft_30000"
+MODEL_ZOO["qwen-3-4b-gpt4"]="../../preference_leakage/saves/Qwen3-4B/gpt4_sft_30000"
+MODEL_ZOO["qwen-3-8b-gemini"]="../../preference_leakage/saves/Qwen3-8B/gemini_sft_30000"
+MODEL_ZOO["qwen-3-8b-gpt4"]="../../preference_leakage/saves/Qwen3-8B/gpt4_sft_30000"
+MODEL_ZOO["qwen-3-14b-gemini"]="../../preference_leakage/saves/Qwen3-14B/gemini_sft_30000"
+MODEL_ZOO["qwen-3-14b-gpt4"]="../../preference_leakage/saves/Qwen3-14B/gpt4_sft_30000"
+
+
 if [ "$1" == "--sft" ]; then
     for MODEL in gpt4 gemini llama
         do
@@ -201,4 +217,27 @@ elif [ "$1" == "--mix" ]; then
                         kill $PID
                 done
         done
+elif [ "$1" == "--additional" ]; then
+    do
+        for MODEL in qwen-2.5-3b qwen-2.5-7b qwen-3-1.7b qwen-3-4b qwen-3-8b qwen-3-14b
+                JUDGE_MODEL="${MODEL}-gpt4"
+                model_name=${MODEL_ZOO["$JUDGE_MODEL"]}
+
+                # run the vllm server
+                python -m vllm.entrypoints.openai.api_server \
+                        --model ${model_name} \
+                        --tensor-parallel-size ${TP_SIZE} \
+                        --download-dir "${HOME_DIR}/model_cache/" \
+                        --port ${PORT} &
+
+                PID=$!
+
+                sleep 200
+                # run inference
+                CONFIG="config/additional/gen_answer_config_${MODEL}-gpt4.yaml"
+                
+                python gen_answer.py --setting-file $CONFIG
+                kill $PID
+        done
+    done
 fi

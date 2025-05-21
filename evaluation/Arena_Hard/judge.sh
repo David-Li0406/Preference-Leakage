@@ -47,4 +47,13 @@ elif [ "$1" == "--same_family" ]; then
 
     python gen_judgment.py --setting-file config/family/judge_config_gemini_1.5_pro.yaml
     python gen_judgment.py --setting-file config/family/judge_config_gpt4-turbo.yaml
+elif [ "$1" == "--additional" ]; then
+    for MODEL in qwen-2.5-3b qwen-2.5-7b qwen-3-1.7b qwen-3-4b qwen-3-8b qwen-3-14b
+        do
+            CONFIG1="config/additional/judge_config_${MODEL}-gemini.yaml"
+            CONFIG2="config/additional/judge_config_${MODEL}-gpt4.yaml"
+            
+            python gen_judgment.py --setting-file $CONFIG1
+            python gen_judgment.py --setting-file $CONFIG2
+        done
 fi

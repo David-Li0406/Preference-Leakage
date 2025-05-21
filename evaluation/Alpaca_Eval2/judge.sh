@@ -121,4 +121,25 @@ elif [ "$1" == "--same_family" ]; then
         --reference_outputs "example/output_Mistral-7B-v0.1_gpt4_sft.json" \
         --annotators_config 'gemini-1.5-pro' \
         --output_path "output/family/gemini-1.5-pro-judge-gpt-4o-as-reference-gemini-as-output"
+elif [ "$1" == "--additional" ]; then
+    for MODEL in Qwen2.5-3B Qwen2.5-7B Qwen3-1.7B Qwen3-4B Qwen3-8B Qwen3-14B
+    do
+        export OPENAI_API_KEY=
+        # gpt-4-turbo & gemini-1.5-flash
+
+        alpaca_eval --model_outputs "example/output_${MODEL}_gemini_sft_30000.json" \
+            --reference_outputs "example/output_${MODEL}_gpt4_sft_30000.json" \
+            --annotators_config 'alpaca_eval_gpt4o-2024-11-20' \
+            --output_path "output/additional/${MODEL}-gpt-4o-judge-gpt-4o-as-reference-gemini-as-output"
+
+
+        export OPENAI_API_KEY=
+        # gemini as a judge
+
+        alpaca_eval --model_outputs "example/output_${MODEL}_gemini_sft_30000.json" \
+            --reference_outputs "example/output_${MODEL}_gpt4_sft_30000.json" \
+            --annotators_config 'gemini-1.5-flash' \
+            --output_path "output/additional/${MODEL}-gemini-judge-gpt-4o-as-reference-gemini-as-output"
+
+    done
 fi

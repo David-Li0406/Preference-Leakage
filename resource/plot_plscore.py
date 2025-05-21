@@ -25,7 +25,7 @@ def adjust_color(value, color1, color2):
 # Example usage:
 color2 = "#9474DE"  # Purple
 color1 = "#88C4E0"  # Blue
-value = 19.3
+value = -0.1
 
 result_color = adjust_color(value, color1, color2)
 print(f'Resulting color: {result_color}')
