@@ -1,6 +1,6 @@
 ## Preference Leakage: A Contamination Problem in LLM-as-a-judge
 
-<!-- This is the official repository of the paper [Preference Leakage: A Contamination Problem in LLM-as-a-judge](https://arxiv.org/abs/2502.01534).
+This is the official repository of the paper [Preference Leakage: A Contamination Problem in LLM-as-a-judge](https://arxiv.org/abs/2502.01534).
 
 - Find more interesting papers about LLM-as-a-judge in our [website](https://llm-as-a-judge.github.io/)!
 - If you find our work helpful and it has been of any assistance to you, we would greatly appreciate it if you could kindly cite it:
@@ -14,7 +14,7 @@
       primaryClass={cs.LG},
       url={https://arxiv.org/abs/2502.01534}, 
 }
-``` -->
+```
 
 ## 🚀 Introduction
 
